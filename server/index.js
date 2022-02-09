@@ -18,6 +18,6 @@ app.use('/posts',postRoutes);
 const URL='mongodb+srv://Gzome:WERmz42hLqYZaA3@cluster0.cf0fy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT= process.env.PORT || 5000;
 mongoose.connect(URL,{useNewUrlParser: true, useUnifiedTopology: true})
-    .then(()=> app.listen(PORT,()=>console.log(`Srever running on port: ${PORT}`)))
+    .then(()=> app.listen(PORT,()=>{console.log(`Srever running on port: ${PORT}`);console.log('Hello world')}))
     .catch((err)=> console.log(err));
 

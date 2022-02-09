@@ -1,4 +1,4 @@
-import { Card, CardActions, CardContent, CardMedia, Button , Typography} from "@material-ui/core";
+import { Card, CardActions, CardMedia, Button , Typography} from "@material-ui/core";
 import React from "react";
 import useStyles from './styles';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbDownAlt';
@@ -9,10 +9,10 @@ const Post = (props)=>{
     const classes = useStyles();
     return(
         <Card className={classes.card}>
-            <CardMedia className={classes.media} image={post.selectedFile} title={post.title}>
+            <CardMedia className={classes.media} image={props.post.selectedFile} title={props.post.title}>
                 <div className={classes.overlay}>
-                    <Typography varriant="h6">{post.creator}</Typography>
-                    <Typography varriant="body6">{moment(post.createdAt).fromNow(à)}</Typography>
+                    <Typography varriant="h6">{props.post.creator}</Typography>
+                    <Typography varriant="body6"></Typography>
                 </div>
                 <div className={classes.overlay2}>
                     <Button style={{color: 'white'}} size="small" onClick={()=>{}}>
@@ -20,18 +20,18 @@ const Post = (props)=>{
                     </Button>
                 </div>
                 <div className={classes.details}>
-                    <Typography variant="body6" color="textSecondary">{post.tags.map((tag)=> `#${tag}`)}</Typography>
+                    <Typography variant="body6" color="textSecondary">{props.post.tags.map((tag)=> `#${tag}`)}</Typography>
                 </div>
                 <CardActions className={classes.cardActions}>
-                    <Typography className={classes.title} variant="h5">{post.message}</Typography>
+                    <Typography className={classes.title} variant="h5">{props.post.message}</Typography>
                 </CardActions>
                 <CardActions className={classes.cardActions}>
-                    <Buutton size="small" color="primary" onClick={()=>{}}>
-                        <ThumbUpAltIcon fontSize="small">{post.likeCount}</ThumbUpAltIcon>
-                    </Buutton>
-                    <Buutton size="small" color="primary" onClick={()=>{}}>
+                    <Button size="small" color="primary" onClick={()=>{}}>
+                        <ThumbUpAltIcon fontSize="small">{props.post.likeCount}</ThumbUpAltIcon>
+                    </Button>
+                    <Button size="small" color="primary" onClick={()=>{}}>
                         <DeleteIcon fontSize="small"></DeleteIcon>
-                    </Buutton>
+                    </Button>
                 </CardActions>
             </CardMedia>
         </Card>
